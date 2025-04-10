@@ -1,3 +1,3 @@
-public class Cuenta {
+public abstract class Cuenta {
     protected double saldo;
 }
