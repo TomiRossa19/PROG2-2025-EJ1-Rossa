@@ -12,7 +12,7 @@ public class CuentaCorriente extends Cuenta implements IGestionSaldo {
     public synchronized boolean quitarSaldo(double monto) {
         if ((saldo - monto) >= -giroDescubierto) {
             saldo -= monto;
-            operaciones += operaciones;
+            operaciones ++;
             return true;
         }
         return false;
@@ -21,7 +21,7 @@ public class CuentaCorriente extends Cuenta implements IGestionSaldo {
     @Override
     public synchronized boolean agregarSaldo(double monto) {
         saldo += monto;
-        operaciones += operaciones;
+        operaciones ++;
         return true;
     }
 

@@ -49,8 +49,19 @@ public class LogicaCuenta {
         }
 
         Cuenta cuenta1 = cuentas.get(cuenta);
-        CuentaDTO cuentaDTO = mapearACuentaDTO(cuenta1); // Convertimos la cuenta a DTO
-        return cuentaDTO.getSaldo(); // Retornamos solo el saldo desde el DTO
+        CuentaDTO cuentaDTO = mapearACuentaDTO(cuenta1);
+        return cuentaDTO.getSaldo();
+    }
+    public void imprimirResumenCuentas() {
+        for (int i = 0; i < cuentas.size(); i++) {
+            Cuenta cuenta = cuentas.get(i);
+            CuentaDTO dto = mapearACuentaDTO(cuenta);
+
+            System.out.println("Cuenta #" + i);
+            System.out.println("Saldo: " + dto.getSaldo());
+            System.out.println("Operaciones: " + dto.getOperaciones());
+            System.out.println("-----------------------------");
+        }
     }
 
 

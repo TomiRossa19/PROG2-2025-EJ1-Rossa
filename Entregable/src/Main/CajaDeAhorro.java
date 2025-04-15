@@ -12,14 +12,14 @@ public class CajaDeAhorro extends Cuenta implements IGestionSaldo {
     @Override
     public synchronized boolean agregarSaldo(double monto) {
         saldo += monto;
-        operaciones += operaciones;
+        operaciones ++;
         return true;
     }
 
     @Override
     public synchronized boolean quitarSaldo(double monto) {
             saldo -= monto;
-            operaciones += operaciones;
+            operaciones ++;
             return true;
     }
 

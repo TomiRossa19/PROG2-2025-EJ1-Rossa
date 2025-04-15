@@ -12,12 +12,12 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             Cuenta cuenta;
             if (random.nextBoolean()) {    // se ejecuta si da true
-                double giro = 100 + (400 * random.nextDouble()); // Entre 100 y 500
+                double giro = 100 + (400 * random.nextDouble());
                 cuenta = builder.setGiroDescubierto(giro).buildCuentaCorriente();
             } else {    // se ejecuta si da false
                 cuenta = builder.buildCajaDeAhorro();
             }
-            logica.cuentas.add(cuenta); // Método que tenés que crear
+            logica.cuentas.add(cuenta);
             System.out.println("Cuenta " + i + " creada: " + cuenta.getClass().getSimpleName());
         }
         ExecutorService executor = Executors.newFixedThreadPool(10);
@@ -53,6 +53,7 @@ public class Main {
         }
 
         System.out.println("Operaciones exitosas: " + exitosas);
+        logica.imprimirResumenCuentas();
     }
 }
 
